@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DownloadManager.Pages;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,6 +23,8 @@ namespace DownloadManager
         public AddDownload()
         {
             InitializeComponent();
+            DownloadFrame.Content = new FirstDownloadPage();
         }
+
     }
 }

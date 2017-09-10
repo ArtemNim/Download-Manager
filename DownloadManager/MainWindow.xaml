@@ -21,6 +21,17 @@
         </ToolBar>
         <Image x:Name="SettingsButton" DockPanel.Dock="Top" Source="G:\Prog projects\DownloadManager\DownloadManager\Image\settings_img.png" Height="39" Margin="0,3,21,0" HorizontalAlignment="Right" VerticalAlignment="Top" Width="39"/>
         <GridSplitter Grid.Row="2" Height="3" VerticalAlignment="Top" HorizontalAlignment="Stretch" ShowsPreview="False" />
-        <DataGrid x:Name="dataGrid" HorizontalAlignment="Left" Margin="10,10,0,10" Grid.Row="1" Width="553"/>
+        <DataGrid x:Name="dataGrid" HorizontalAlignment="Left" Margin="10,10,0,10" ItemsSource="{Binding Source = Download_list}" AutoGenerateColumns="False" Grid.Row="1" Width="553">
+            <DataGrid.Columns>
+                <DataGridCheckBoxColumn Header="" Binding="{Binding Path=IsChecked}"/>
+                <DataGridTextColumn Header="Name" Binding="{Binding Path=Name}"/>
+                <DataGridTemplateColumn Header="State">
+                    
+                </DataGridTemplateColumn>
+                <DataGridTextColumn Header="Speed" Binding="{Binding Path=Speed}"/>
+                <DataGridTextColumn Header="Size" Binding="{Binding Path=Size}"/>
+                <DataGridTextColumn Header="Upload date" Binding="{Binding Path=Added}"/>
+            </DataGrid.Columns>
+        </DataGrid>
     </Grid>
 </Window>
